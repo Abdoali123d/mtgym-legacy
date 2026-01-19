@@ -45,6 +45,7 @@ export default function Home() {
   return (
     <div style={{ padding: '2rem', textAlign: 'center', direction: 'rtl', background: '#000', color: '#FFD700', minHeight: '100vh' }}>
       <h1>MTGym Legacy</h1>
+<p><a href="/admin" style={{ color: '#FFD700', textDecoration: 'underline' }}>لوحة تحكم المالك</a></p>
       <p>شاشة الاستقبال</p>
       <hr style={{ margin: '2rem 0', border: '1px solid #FFD700' }} />
 

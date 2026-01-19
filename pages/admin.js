@@ -1,9 +1,15 @@
 import { useState, useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
 
-// إعدادات Supabase
+// إعدادات Supabase (تأكد إنها صحيحة)
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+// التحقق من وجود المتغيرات
+if (!supabaseUrl || !supabaseAnonKey) {
+  console.error('Supabase URL or Key not found!');
+}
+
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 export default function AdminDashboard() {
@@ -11,7 +17,6 @@ export default function AdminDashboard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // جلب الأعضاء عند تحميل الصفحة
   useEffect(() => {
     const fetchMembers = async () => {
       try {
